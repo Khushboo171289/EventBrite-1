@@ -12,7 +12,7 @@ services:
       dockerfile: Dockerfile
     environment:
       ExternalCatalogBaseUrl: http://localhost:7822
-      IdentityUrl: http://192.168.1.115:7700
+      IdentityUrl: http://192.168.0.12:7700
       DatabaseServer: mssqlserver
       DatabaseName: EventCatalogdb
       DatabaseUser: sa
@@ -33,7 +33,7 @@ services:
       dockerfile: Dockerfile
     environment:
       CatalogUrl: http://eventcatalog
-      IdentityUrl: http://192.168.1.115:7700
+      IdentityUrl: http://192.168.0.12:7700
       CallBackUrl: http://localhost:7823
       CartUrl: http://cart
       OrderUrl: http://order
@@ -74,7 +74,7 @@ services:
       dockerfile: Dockerfile
     environment:
       ConnectionString: basket.data
-      IdentityUrl: http://192.168.1.115:7700
+      IdentityUrl: http://192.168.0.12:7700
     ports:
       - "7824:80"
     container_name: cartapi
@@ -93,7 +93,7 @@ services:
     image: events/orderapi
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      IdentityUrl: http://192.168.1.115:7700
+      IdentityUrl: http://192.168.0.12:7700
       DatabaseServer: mssqlserver
       DatabaseName: OrdersDb
       DatabaseUser: sa
